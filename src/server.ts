@@ -1,9 +1,8 @@
-import express, { request, response } from "express";
+import "reflect-metadata";
+import express from "express";
+
+import "./database";
 
 const app = express();
-
-app.get("/api/v1/tasks", (request, response) => {
-  return response.send("sadasda");
-});
 
 app.listen(3000, () => console.log("Server is runing in port 3000"));
