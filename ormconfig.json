@@ -4,5 +4,11 @@
   "port": 5432,
   "username": "postgres",
   "password": "postgres",
-  "database": "tasklist"
+  "database": "tasklist",
+  "entities": ["src/Models/*.ts"],
+  "migrations": ["src/database/migrations/*.ts"],
+  "cli": {
+    "migrationsDir": "src/database/migrations",
+    "entitiesDir": "src/Models"
+  }
 }
