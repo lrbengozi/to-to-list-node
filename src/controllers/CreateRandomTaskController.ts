@@ -5,14 +5,24 @@ import Chance from "chance";
 export class CreateRandomTaskController {
   async handle(request: Request, response: Response) {
     const chance = new Chance();
-    const description = `Talk with ${chance.name()}`;
+    const tasks = [];
 
     const { name, email } = request.body;
 
     const createTaskService = new CreateTaskService();
 
-    const task = await createTaskService.execute({ name, email, description });
+    for (let i = 1; i <= 3; i++) {
+      const description = `Talk with ${chance.name()}`;
 
-    return response.json(task);
+      const task = await createTaskService.execute({
+        name,
+        email,
+        description,
+      });
+
+      tasks.push(task);
+    }
+
+    return response.json(tasks);
   }
 }
