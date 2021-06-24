@@ -15,6 +15,22 @@ export class CreateTaskService {
       throw new Error("Please insert a description");
     }
 
+    if (!name) {
+      throw new Error("Please insert a name");
+    }
+
+    if (!email) {
+      throw new Error("Please insert a email");
+    }
+
+    const descriptionAlreadyExists = await tasksRepository.findOne({
+      description,
+    });
+
+    if (descriptionAlreadyExists) {
+      throw new Error("Task already exists");
+    }
+
     const task = tasksRepository.create({
       name,
       email,
