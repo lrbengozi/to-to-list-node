@@ -11,7 +11,7 @@ export class CreateRandomTaskController {
 
     const createTaskService = new CreateTaskService();
 
-    for (let i = 1; i <= 3; i++) {
+    while (tasks.length <= 2) {
       const description = `Talk with ${chance.name()}`;
 
       const task = await createTaskService.execute({
