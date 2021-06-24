@@ -8,8 +8,7 @@ export async function createTaskPolicies(
 ) {
   const { email } = req.body;
 
-  const data = await validateEmail(email);
+  await validateEmail(email);
 
-  console.log("Data: " + data);
   next();
 }
