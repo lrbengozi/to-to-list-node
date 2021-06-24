@@ -2,7 +2,7 @@ import { Router } from "express";
 import { CreateTaskController } from "./controllers/CreateTaskController";
 import { FinishTaskController } from "./controllers/FinishTaskController";
 import { ListTaskController } from "./controllers/ListTaskController";
-import { ReopenTaskController } from "./controllers/ReopenTaskController copy";
+import { ReopenTaskController } from "./controllers/ReopenTaskController";
 
 const router = Router();
 
