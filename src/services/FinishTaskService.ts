@@ -15,7 +15,6 @@ export class FinishTaskService {
       throw new Error("This task is already closed");
     }
 
-    console.log(task);
     await tasksRepository.update(id, { pending: false });
 
     return {
