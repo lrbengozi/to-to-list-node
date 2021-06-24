@@ -11,18 +11,6 @@ export class CreateTaskService {
   async execute({ name, email, description }: ITaskRequest) {
     const tasksRepository = getCustomRepository(TaskRepository);
 
-    if (!description) {
-      throw new Error("Please insert a description");
-    }
-
-    if (!name) {
-      throw new Error("Please insert a name");
-    }
-
-    if (!email) {
-      throw new Error("Please insert a email");
-    }
-
     const descriptionAlreadyExists = await tasksRepository.findOne({
       description,
     });
